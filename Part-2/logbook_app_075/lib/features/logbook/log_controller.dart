@@ -12,6 +12,10 @@ class LogController {
   }
 
   void addLog(String title, String desc, {String category = 'Umum'}) {
+    if (title.trim().isEmpty || desc.trim().isEmpty) {
+      return; 
+    }
+
     final newLog = LogModel(
       title: title,
       description: desc,
